@@ -1,0 +1,11 @@
+.venv
+
+.env
+datasets/mnist/
+datasets/cifar10.npz
+datasets/cbow_corpus1.txt
+mnist.npz
+
+models
+.ipynb_checkpoints
+chess.jpg
