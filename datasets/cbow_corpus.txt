@@ -1,0 +1,61 @@
+Deep learning is a branch of machine learning that uses neural networks with many layers.
+A neural network is made of layers of neurons, and every neuron computes a weighted sum of its inputs.
+The weighted sum is passed through an activation function such as relu or sigmoid.
+The first layer is the input layer, the last layer is the output layer, and the layers in between are hidden layers.
+A deep network has many hidden layers, which is why we call it deep learning.
+During training the network makes a prediction, and a loss function measures how wrong the prediction is.
+The optimizer changes the weights of the network to make the loss smaller.
+Gradient descent is the most common optimizer, and stochastic gradient descent updates the weights using small batches of data.
+The learning rate controls how big each weight update is.
+If the learning rate is too large the loss jumps around, and if the learning rate is too small training is very slow.
+Backpropagation computes the gradient of the loss with respect to every weight in the network.
+One full pass over the training data is called an epoch.
+We train the network for many epochs and watch the training loss and the validation loss.
+When the training loss keeps falling but the validation loss starts rising, the network is overfitting.
+Dropout and regularization help the network avoid overfitting.
+A convolutional neural network is a neural network designed for images.
+A convolution layer slides small filters over the image and produces feature maps.
+The early filters detect edges and colours, and the deeper filters detect shapes and objects.
+A pooling layer reduces the size of the feature maps and keeps the strongest signals.
+After the convolution layers, a dense layer uses the features to classify the image.
+Image classification means predicting the class of an image, for example a cat, a dog, a car or a ship.
+Transfer learning reuses a network that was already trained on a large dataset such as imagenet.
+In transfer learning we freeze the lower layers of the pretrained network and train a new classifier on top.
+Later we can unfreeze more layers and fine tune the network with a small learning rate.
+An autoencoder is a neural network that learns to copy its input to its output.
+The encoder compresses the input into a small latent representation.
+The decoder takes the latent representation and reconstructs the input.
+The reconstruction error tells us how well the autoencoder rebuilt the input.
+If we train an autoencoder only on normal data, it learns to reconstruct normal data very well.
+When the autoencoder sees abnormal data, the reconstruction error becomes large.
+A large reconstruction error is a signal of an anomaly, so the autoencoder can detect anomalies.
+Anomaly detection is used to find fraud, faults in machines and abnormal heart beats.
+Word embeddings represent every word as a dense vector of numbers.
+Words that appear in similar contexts get similar vectors.
+The continuous bag of words model predicts a target word from the context words around it.
+The context words are the words on the left and the words on the right of the target word.
+The size of the context is called the window size.
+The model looks up the embedding of every context word and takes the average of the embeddings.
+The average vector is passed to a dense layer with a softmax activation that predicts the target word.
+After training, the embedding layer holds a vector for every word in the vocabulary.
+We can compare word vectors with cosine similarity to find similar words.
+The skip gram model does the opposite of the continuous bag of words model and predicts the context words from the target word.
+Tensorflow is a library for building and training neural networks.
+Keras is a high level library that makes it easy to define layers, compile a model and train the model.
+In keras we define the model, compile the model with an optimizer, a loss function and metrics, and then fit the model on the training data.
+After training we evaluate the model on the test data to estimate the accuracy of the model.
+Accuracy is the fraction of predictions that are correct.
+Precision tells us how many predicted anomalies are real anomalies, and recall tells us how many real anomalies were found.
+A confusion matrix shows the correct predictions and the mistakes for every class.
+Good data, a good model and careful training together make a good deep learning system.
+The network learns the weights from the data, and the data decides what the network can learn.
+A small network trains fast but may underfit, and a large network learns more but may overfit.
+The batch size is the number of samples the network sees before each weight update.
+Normalizing the input data helps the network train faster and more stably.
+Pixel values of an image are usually divided by two hundred fifty five so they lie between zero and one.
+The softmax activation turns the output scores into probabilities that add up to one.
+The class with the highest probability is the predicted class.
+Categorical cross entropy is the loss function for classification with many classes.
+Mean squared error is a loss function for reconstruction and regression.
+The encoder and the decoder of an autoencoder are trained together to reduce the reconstruction error.
+The context words help the model predict the target word, and the target word helps the model learn the embeddings.
